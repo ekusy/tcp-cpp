@@ -27,7 +27,10 @@ bool tcp::Connect(const char* IP, u_short PORT)
 	memset(&dstAddr, 0, sizeof(dstAddr));
 	dstAddr.sin_port = htons(PORT);
 	dstAddr.sin_family = AF_INET;
-	dstAddr.sin_addr.s_addr = inet_addr(IP);
+	//dstAddr.sin_addr.s_addr = inet_addr(IP);
+	int n = inet_pton(AF_INET, "127.0.0.1", &dstAddr.sin_addr.s_addr);
+	//std::cout << "getaddrinfo()" << std::endl;
+	
 	
 
 	// ソケットの生成
@@ -65,11 +68,12 @@ RECVSTATUS tcp::Recv(char* pData, int DataSize, int *pRecvSize)
 }
 
 // 送信
-bool tcp::Send(char* pData, int DataSize)
+bool tcp::Send(const char* pData, int DataSize)
 {
 	//パケットの送信
-	if (send(m_DstSocket, pData, DataSize, 0) == SOCKET_ERROR)
+	if (send(m_DstSocket, pData, DataSize, 0) == SOCKET_ERROR){
 		return false;
+	}
 
 	return true;
 }

@@ -1,14 +1,11 @@
 #include <iostream>
+#include <string>
 #include "tcp.h"
 #define DEBUG
 #define IP "127.0.0.1"
 #define PORT 10000
 
-inline void debugPrint(char* message){
-//#ifndef DEBUG
-	std::cout << message << std::endl;
-//#endif
-}
+
 
 inline int charSize(){}
 
@@ -25,16 +22,22 @@ int main()
 	
 	int size;
 	int count = 0;
-	while (count != 100){
-		char s[10];
-		char buff[64];
-		itoa(count, s, 10);
-		test.Send(s, sizeof(s));
+	while (count != 10){
+		std::string s(std::to_string(count) + ';');
+		std::string buffer;
+		char buff[64] = {};
+		const char *str = s.c_str();
+		int str_size = s.size();
+		test.Send(str, str_size);
 		if (test.Recv(buff, sizeof(buff), &size)){
+			nullDelete(buff);
+			buffer = buff;
 			debugPrint(buff);
+			//std::cout << buffer << std::endl;
 			count++;
 		}
 	}
+	
 	return 0;
 
 }
