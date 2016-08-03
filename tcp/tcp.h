@@ -40,17 +40,23 @@ class tcp
 {
 private:
 	SOCKET	m_DstSocket;	// 送受信ソケット
-
+	struct addrinfo hints, *res0, *res;
+	// sockaddr_in 構造体のセット
+	struct sockaddr_in dstAddr;
 public:
 	tcp();
 	virtual ~tcp();
+	void initialize();
+	void finalize();
+	void setAddress(const char* IP, u_short PORT);
 	// 接続
 	bool Connect(const char* IP, u_short PORT);
-
+	bool Connect();
 	// 受信
 	RECVSTATUS Recv(char* pData, int DataSize, int *pRecvSize);
 	// 送信
 	bool Send(const char* pData, int DataSize);
+	bool Send(const char* pData, int DataSize, const char* IP, u_short PORT);
 
 };
 

@@ -1,9 +1,8 @@
-﻿平成 28/8/3 14:16:03 にビルドを開始しました。
+﻿平成 28/8/3 18:26:48 にビルドを開始しました。
      1>ノード 2 上のプロジェクト "E:\git\tcp-cpp\tcp\tcp.vcxproj" (Build ターゲット)。
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IE:\lib\opencv310\build\include /Zi /nologo /W3 /WX- /sdl /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt main.cpp
-         main.cpp
-     1>main.cpp(30): warning C4267: '初期化中' : 'size_t' から 'int' に変換しました。データが失われているかもしれません。
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /IE:\lib\opencv310\build\include /Zi /nologo /W3 /WX- /sdl /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"x64\Debug\\" /Fd"x64\Debug\vc120.pdb" /Gd /TP /errorReport:prompt tcp.cpp
+         tcp.cpp
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\git\tcp-cpp\x64\Debug\tcp.exe" /INCREMENTAL /NOLOGO /LIBPATH:E:\lib\opencv310\build\x64\vc14\lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"E:\git\tcp-cpp\x64\Debug\tcp.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\git\tcp-cpp\x64\Debug\tcp.lib" /MACHINE:X64 x64\Debug\main.obj
          x64\Debug\tcp.obj
@@ -12,4 +11,4 @@
 
 ビルドに成功しました。
 
-経過時間 00:00:01.13
+経過時間 00:00:01.00
